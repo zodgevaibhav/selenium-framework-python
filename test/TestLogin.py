@@ -18,7 +18,7 @@ class TestLogin(AbstractSelenium.AbstractSelenium):
         print("*********** in test1",userName)
         LoginPage.LoginPage().navigateToLoginPage().loginForInvalidUser(userName)
 
-    @pytest.mark.parametrize("userName",DataProvider.DataProvider.getData("test_verifyLoginForInvalidUser"))
-    def test_verifyLoginForInvalidUser(self,userName):
+    @pytest.mark.parametrize("TC_ID,TC_NAME,userName",DataProvider.DataProvider.getData("test_verifyLoginForInvalidUser"))
+    def test_verifyLoginForInvalidUser(self,TC_ID,TC_NAME,userName):
         print("*********** in test1",userName)
         LoginPage.LoginPage().navigateToLoginPage().loginForInvalidUser(userName)
