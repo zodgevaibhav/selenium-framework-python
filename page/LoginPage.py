@@ -2,22 +2,26 @@ import WebDriverFactory
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+import BasePage
 
-class LoginPage:
+class LoginPage(BasePage.BasePage):
 		
+	elmLoginButton=(By.NAME,"bt_login")
+	elmUserName=(By.ID,"validateUserId_loginName")
+	
+	
 	def __init__(self):
 		self.wait=WebDriverWait(WebDriverFactory.WebDriverFactory.getDriver(),20)
+		self.driver=WebDriverFactory.WebDriverFactory.getDriver()
 		
 	def navigateToLoginPage(self):
-		self.driver = WebDriverFactory.WebDriverFactory.getDriver()
-		self.driver.maximize_window()
-		self.driver.get("https://")
+		self.driver.get("https:")
 		return self
 		
 	def __login(self,userName):
 		self.driver.switch_to_frame("mainFrame")
-		self.driver.find_element_by_id("validateUserId_loginName").send_keys(userName)
-		self.driver.find_element_by_name("bt_login").click()
+		self.findElementBy(self.elmUserName).send_keys(userName)
+		self.findElementBy(self.elmLoginButton).click()
 		return self
 
 	def loginForExpiredPassword(self,userName):

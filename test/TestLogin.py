@@ -4,17 +4,17 @@ import sys
 sys.path.append('../page/')
 sys.path.append('../common/')
 
-import WebDriverFactory,LoginPage,DataProvider,AbstractSelenium
+import WebDriverFactory,DataProvider,AbstractSelenium,LoginPage
 
 class TestLogin(AbstractSelenium.AbstractSelenium):
 
     @pytest.mark.parametrize("userName", [("vzodge")])
-    def verifyLoginForExpiredUser(self,userName):
+    def test_verifyLoginForExpiredUser(self,userName):
         print("*********** in test1",userName)
         LoginPage.LoginPage().navigateToLoginPage().loginForExpiredPassword(userName).printErrorMessage()
 
     @pytest.mark.parametrize("userName", [("vaibhavz"),("zodge")])
-    def verifyLoginForInvalidUser(self,userName):
+    def test_verifyLoginForInvalidUser(self,userName):
         print("*********** in test1",userName)
         LoginPage.LoginPage().navigateToLoginPage().loginForInvalidUser(userName)
 
