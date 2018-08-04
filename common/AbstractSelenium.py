@@ -1,8 +1,12 @@
 from selenium.webdriver.support.wait import WebDriverWait
 import WebDriverFactory
 
-class AbstractSelenium:
-	
-	def __init__(self):
-		print("****************** in AbstractSelenium constructor")
-		self.wait=WebDriverWait(WebDriverFactory.WebDriverFactory.getDriver(),20)
+class AbstractSelenium: #this class must inherited by each Test Class
+
+	def setup_method(self, method): #this method will run before every test method, like @BeforeTest
+		WebDriverFactory.WebDriverFactory.setDriver()
+		print ("************************ Before method ")
+
+	def teardown_method(self, method): #this method will run after every test method, like @AfterTest
+		WebDriverFactory.WebDriverFactory.getDriver().quit()
+		print ("************************ After method")
