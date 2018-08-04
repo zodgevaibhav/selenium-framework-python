@@ -12,7 +12,7 @@ class LoginPage(AbstractSelenium):
 	def navigateToLoginPage(self):
 		self.driver = WebDriverFactory.WebDriverFactory.getDriver()
 		self.driver.maximize_window()
-		self.driver.get("https://yourpage.com/")
+		self.driver.get("https://")
 		return self
 		
 	def __login(self,userName):
