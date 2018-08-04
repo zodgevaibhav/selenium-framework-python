@@ -1,10 +1,9 @@
 import WebDriverFactory
-from AbstractSelenium import AbstractSelenium
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-class LoginPage(AbstractSelenium):
+class LoginPage:
 		
 	def __init__(self):
 		self.wait=WebDriverWait(WebDriverFactory.WebDriverFactory.getDriver(),20)
@@ -12,7 +11,7 @@ class LoginPage(AbstractSelenium):
 	def navigateToLoginPage(self):
 		self.driver = WebDriverFactory.WebDriverFactory.getDriver()
 		self.driver.maximize_window()
-		self.driver.get("https://")
+		self.driver.get("https://stagemc.transnox.com/jsp/vt/jsp/index.jsp")
 		return self
 		
 	def __login(self,userName):
