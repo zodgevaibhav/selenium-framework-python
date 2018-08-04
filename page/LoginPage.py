@@ -11,7 +11,7 @@ class LoginPage:
 	def navigateToLoginPage(self):
 		self.driver = WebDriverFactory.WebDriverFactory.getDriver()
 		self.driver.maximize_window()
-		self.driver.get("https://stagemc.transnox.com/jsp/vt/jsp/index.jsp")
+		self.driver.get("https://")
 		return self
 		
 	def __login(self,userName):
