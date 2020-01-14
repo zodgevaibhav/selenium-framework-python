@@ -15,7 +15,7 @@ class LoginPage(BasePage.BasePage):
 		self.driver=WebDriverFactory.WebDriverFactory.getDriver()
 		
 	def navigateToLoginPage(self):
-		self.driver.get("https:")
+		self.driver.get("https://www.google.com")
 		return self
 		
 	def __login(self,userName):
