@@ -1,0 +1,5 @@
+selenium
+openpyxl
+pytest
+pytest-xdist
+pytest-rerunfailures
